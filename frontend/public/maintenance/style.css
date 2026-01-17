@@ -1,0 +1,266 @@
+/* ==================== BASE ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #d4a84b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ==================== MAIN ==================== */
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* ==================== HOME SECTION ==================== */
+.home {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.home__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* ==================== HOME DATA ==================== */
+.home__data {
+    animation: fadeInUp 1s ease-out;
+}
+
+.home__subtitle {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #3d3d3d;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+}
+
+.home__description {
+    font-size: 1rem;
+    color: #3d3d3d;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+/* ==================== BUTTON ==================== */
+.home__button {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home__button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #2d2d2d;
+}
+
+.home__button:active {
+    transform: translateY(-1px);
+}
+
+/* ==================== HOME IMAGE ==================== */
+.home__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.balloon-svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+}
+
+.home__shadow {
+    width: 120px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    margin-top: -20px;
+    animation: shadowPulse 4s ease-in-out infinite;
+}
+
+/* ==================== CLOUDS ANIMATION ==================== */
+.cloud-1 {
+    animation: cloudMove1 8s ease-in-out infinite;
+}
+
+.cloud-2 {
+    animation: cloudMove2 10s ease-in-out infinite;
+}
+
+.cloud-3 {
+    animation: cloudMove3 7s ease-in-out infinite;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #3d3d3d;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes shadowPulse {
+    0%, 100% {
+        transform: scaleX(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scaleX(0.85);
+        opacity: 0.5;
+    }
+}
+
+@keyframes cloudMove1 {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+}
+
+@keyframes cloudMove2 {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-12px);
+    }
+}
+
+@keyframes cloudMove3 {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media screen and (max-width: 900px) {
+    .home__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .home__data {
+        order: 1;
+    }
+
+    .home__img {
+        order: 0;
+    }
+
+    .balloon-svg {
+        max-width: 220px;
+    }
+
+    .home__title {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+
+    .home__description br {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        padding: 1.5rem;
+    }
+
+    .home__subtitle {
+        font-size: 0.8rem;
+    }
+
+    .home__title {
+        font-size: 1.75rem;
+    }
+
+    .home__description {
+        font-size: 0.9rem;
+    }
+
+    .home__button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .balloon-svg {
+        max-width: 180px;
+    }
+}
+
+/* ==================== PREFERS REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+    .balloon-svg,
+    .cloud-1,
+    .cloud-2,
+    .cloud-3,
+    .home__shadow,
+    .home__data,
+    .home__img {
+        animation: none;
+    }
+}
