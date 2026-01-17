@@ -99,11 +99,12 @@ body {
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-.balloon-img {
+.maintenance-img {
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     height: auto;
-    animation: float 4s ease-in-out infinite;
+    animation: pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
 }
 
 .home__shadow {
@@ -112,7 +113,7 @@ body {
     background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
     border-radius: 50%;
     margin-top: -20px;
-    animation: shadowPulse 4s ease-in-out infinite;
+    animation: shadowPulse 3s ease-in-out infinite;
 }
 
 /* ==================== CLOUDS ANIMATION ==================== */
@@ -149,12 +150,24 @@ body {
     }
 }
 
-@keyframes float {
+@keyframes pulse {
     0%, 100% {
-        transform: translateY(0);
+        transform: scale(1);
     }
     50% {
-        transform: translateY(-15px);
+        transform: scale(1.03);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-2deg);
+    }
+    75% {
+        transform: rotate(2deg);
     }
 }
 
@@ -164,8 +177,8 @@ body {
         opacity: 0.8;
     }
     50% {
-        transform: scaleX(0.85);
-        opacity: 0.5;
+        transform: scaleX(0.95);
+        opacity: 0.6;
     }
 }
 
