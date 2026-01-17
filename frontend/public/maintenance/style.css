@@ -101,7 +101,7 @@ body {
 
 .balloon-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 450px;
     height: auto;
     animation: float 4s ease-in-out infinite;
 }
