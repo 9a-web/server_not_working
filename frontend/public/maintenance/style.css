@@ -99,7 +99,7 @@ body {
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
-.balloon-svg {
+.balloon-img {
     width: 100%;
     max-width: 300px;
     height: auto;
