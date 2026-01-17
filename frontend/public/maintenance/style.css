@@ -7,7 +7,9 @@
 
 body {
     font-family: 'Space Grotesk', sans-serif;
-    background-color: #d4a84b;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #a855f7, #6366f1);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -45,7 +47,7 @@ body {
     display: block;
     font-size: 0.9rem;
     font-weight: 500;
-    color: #3d3d3d;
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -54,14 +56,14 @@ body {
 .home__title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
-    color: #1a1a1a;
+    color: #ffffff;
     line-height: 1.2;
     margin-bottom: 1.25rem;
 }
 
 .home__description {
     font-size: 1rem;
-    color: #3d3d3d;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.7;
     margin-bottom: 2rem;
 }
@@ -69,8 +71,8 @@ body {
 /* ==================== BUTTON ==================== */
 .home__button {
     display: inline-block;
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #764ba2;
     padding: 1rem 2rem;
     border-radius: 8px;
     font-size: 0.95rem;
@@ -82,8 +84,8 @@ body {
 
 .home__button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    background-color: #2d2d2d;
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
+    background-color: #f0f0f0;
 }
 
 .home__button:active {
@@ -133,7 +135,7 @@ body {
 .footer {
     text-align: center;
     padding: 1.5rem;
-    color: #3d3d3d;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.85rem;
     font-weight: 500;
 }
@@ -147,6 +149,18 @@ body {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 
